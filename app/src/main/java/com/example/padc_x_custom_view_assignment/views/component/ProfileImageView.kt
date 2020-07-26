@@ -23,15 +23,13 @@ class ProfileImageView @JvmOverloads  constructor(
 
         context.withStyledAttributes(attrs, R.styleable.ProfileImageView) {
             cornerRadius = getDimension(R.styleable.ProfileImageView_cornerRadius, 0f)
+           borderWidth = getDimension(R.styleable.ProfileImageView_borderWidth, 0f)
             borderColor = getColor(R.styleable.ProfileImageView_borderColor, borderColor)
         }
 
 
     }
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        // Paint styles used for rendering are initialized here. This
-        // is a performance optimization, since onDraw() is called
-        // for every screen refresh.
         style = Paint.Style.STROKE
 
         color = borderColor
@@ -41,15 +39,18 @@ class ProfileImageView @JvmOverloads  constructor(
 
     override fun onDraw(canvas: Canvas) {
 
-        // val rectangle = RectF(0f, 0f, width.toFloat(), height.toFloat())
+        val rectangle = RectF(0f, 0f, width.toFloat(), height.toFloat())
 
         val size = width.toFloat()
         val radius  = size/2
+        cornerRadius = radius
+
+
+        path.addRoundRect(rectangle, cornerRadius, cornerRadius, Path.Direction.CCW)
+
+        canvas?.clipPath(path)
 
         canvas.drawCircle(size / 2f, size / 2f, radius - borderWidth / 2f, paint)
-
-        // path.addRoundRect(rectangle, cornerRadius, cornerRadius, Path.Direction.CCW)
-
 
         super.onDraw(canvas)
     }
