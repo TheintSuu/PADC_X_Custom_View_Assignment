@@ -50,7 +50,7 @@
                         app:tabGravity="fill"
                         app:tabMode="fixed"
                         app:tabSelectedTextColor="@color/colorPrimary"
-                        app:tabTextColor="#202022" />
+                        app:tabTextColor="#202021" />
 
                     <androidx.viewpager.widget.ViewPager
                         android:id="@+id/viewPager"
