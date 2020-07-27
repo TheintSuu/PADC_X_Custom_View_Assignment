@@ -56,79 +56,21 @@
         android:id="@+id/tvDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#A5A4A4"
+        android:textColor="#E6E4E4"
         android:layout_marginStart="15dp"
         android:text="03 days | Dec 18, 2019"/>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="72dp"
-        android:orientation="horizontal">
-
-        <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
-            android:orientation="horizontal"
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProfile"
             android:layout_width="match_parent"
-            android:layout_height="85dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
-
-        <com.example.padc_x_custom_view_assignment.views.component.ProfileImageView
-            android:id="@+id/roundedCornerImageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="12dp"
-            android:scaleType="centerCrop"
-            app:borderColor="#FFFFFF"
-            app:borderWidth="1dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.044"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/yibo" />
-
-        <com.example.padc_x_custom_view_assignment.views.component.ProfileImageView
-            android:id="@+id/roundedCornerImageView2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:scaleType="centerCrop"
-            app:borderColor="#FFFFFF"
-            app:borderWidth="1dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.152"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.4"
-            app:srcCompat="@drawable/yibo" />
-
-        <com.example.padc_x_custom_view_assignment.views.component.ProfileImageView
-            android:id="@+id/roundedCornerImageView3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:scaleType="centerCrop"
-            app:borderColor="#FFFFFF"
-            app:borderWidth="1dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.257"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.4"
-            app:srcCompat="@drawable/yibo" />
-
-        <com.example.padc_x_custom_view_assignment.views.component.ProfileImageView
-            android:id="@+id/btnAdd"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:scaleType="centerCrop"
-            app:borderColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.368"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.4"
-            app:srcCompat="@drawable/ic_baseline_black_add_24" />
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/normal_padding"
+            tools:listitem="@layout/task_item_view"
+            />
 
         <ProgressBar
             android:id="@+id/taskProgressBar"
@@ -139,12 +81,9 @@
             android:progressDrawable="@drawable/progress_bar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.955"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.4"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
+            />
+
+    </RelativeLayout>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -155,7 +94,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#BDBDBD"
+        android:background="#F3EFEF"
         android:orientation="vertical"
       >
 
@@ -182,7 +121,6 @@
 
 
         </RelativeLayout>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTask"
             android:layout_width="match_parent"

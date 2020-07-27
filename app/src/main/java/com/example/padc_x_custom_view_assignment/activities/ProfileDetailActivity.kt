@@ -16,6 +16,7 @@ class ProfileDetailActivity : AppCompatActivity() {
             return Intent(context, ProfileDetailActivity::class.java)
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_detail)
@@ -28,4 +29,5 @@ class ProfileDetailActivity : AppCompatActivity() {
         tabLayout.setupWithViewPager(viewPager)
 
     }
+
 }
