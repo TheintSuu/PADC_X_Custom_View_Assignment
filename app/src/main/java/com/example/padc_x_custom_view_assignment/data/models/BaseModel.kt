@@ -7,9 +7,7 @@ abstract class BaseModel {
 
     protected lateinit var mTaskDB : TasksDB
 
-    fun init(context: Context) {
-        initDatabase(context)
-    }
+
 
     fun initDatabase(context: Context) {
         mTaskDB = TasksDB.getDBInstance(context)
